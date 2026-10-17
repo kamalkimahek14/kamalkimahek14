@@ -12,7 +12,7 @@ Machine Learning Engineer at Progress Rail (Caterpillar), 2022–2026: autonomou
 
 | Result | How |
 |---|---|
-| Raised fuel saving vs manual driving from about 5% to 12% (average across train types) on 1,000+ real trips; one 15–20 MB DQN package, about 100× smaller than the 2 GB model | [Deep RL Driving Strategy for Freight Trains](https://kamal-mehta.com/?r=github#/p/deep-rl-driving): built the DQN model and slack predictor that run on all 500+ locomotives; the EPA certified the 12% for the software in 2025 |
+| Raised fuel saving vs manual driving from about 5% to 12% (average across train types) on 1,000+ real trips; one 15–20 MB DQN package, about 100× smaller than the 2 GB model | [Deep RL Driving Strategy for Freight Trains](https://kamal-mehta.com/?r=github#/p/deep-rl-driving): built the DQN model, its rewards and training setup, and the slack predictor in the software package on all 500+ locomotives; the EPA certified the 12% for the software in 2025 |
 | Replaced per-territory models with 4–6 models covering 120+ territories | [One Model per Train Type](https://kamal-mehta.com/?r=github#/p/feature-engineering-generalization): look-ahead terrain features;; AWS training cost about 80% lower with RL trained locally |
 | Raised simulation precision from 75% to 85% | [Simulator Calibration](https://kamal-mehta.com/?r=github#/p/train-physics-calibration): bounded grid search, S3 and Lambda pipeline; precision = 100% minus the 50/50 normalized RMSE of fuel and running time |
 | Investigated 100+ client-reported field issues as fleet availability rose from about 90% to 99% | [100+ Field Issues Investigated](https://kamal-mehta.com/?r=github#/p/rca-fleet-availability): root cause and a regression test for each, under a 24-hour SLA |
