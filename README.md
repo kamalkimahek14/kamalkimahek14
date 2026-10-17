@@ -1,6 +1,6 @@
 ### Kamal Mehta
 
-Machine Learning Engineer. I build machine learning that runs in production.
+Machine Learning Engineer. I build machine learning that runs in production on 500+ locomotives.
 
 Open to new roles · Dallas–Fort Worth, TX · kamalmehta.ai@gmail.com
 
@@ -12,8 +12,8 @@ Machine Learning Engineer at Progress Rail (Caterpillar), 2022–2026: autonomou
 
 | Result | How |
 |---|---|
-| Raised fuel saving vs manual driving from about 5% to 12% (average across train types) on 1,000+ real trips; one 15–20 MB DQN package, about 100× smaller than the 2 GB model | [Deep RL Driving Strategy for Freight Trains](https://kamal-mehta.com/?r=github#/p/deep-rl-driving): built the DQN model, its rewards and training setup, and the slack predictor in the software package on all 500+ locomotives; the EPA certified the 12% for the software in 2025 |
-| Replaced per-territory models with 4–6 models covering 120+ territories | [One Model per Train Type](https://kamal-mehta.com/?r=github#/p/feature-engineering-generalization): look-ahead terrain features;; AWS training cost about 80% lower with RL trained locally |
+| Raised fuel saving vs manual driving from about 5% to 12% (average across train types) on 1,000+ real trips | [Deep RL Driving Strategy for Freight Trains](https://kamal-mehta.com/?r=github#/p/deep-rl-driving): my DQN model, one 15–20 MB file about 100× smaller than the 2 GB model; EPA-certified for the software in 2025 |
+| Replaced per-territory models with 4–6 models covering 120+ territories | [One Model per Train Type](https://kamal-mehta.com/?r=github#/p/feature-engineering-generalization): look-ahead terrain features; AWS training cost about 80% lower with RL trained locally |
 | Raised simulation precision from 75% to 85% | [Simulator Calibration](https://kamal-mehta.com/?r=github#/p/train-physics-calibration): bounded grid search, S3 and Lambda pipeline; precision = 100% minus the 50/50 normalized RMSE of fuel and running time |
 | Investigated 100+ client-reported field issues as fleet availability rose from about 90% to 99% | [100+ Field Issues Investigated](https://kamal-mehta.com/?r=github#/p/rca-fleet-availability): root cause and a regression test for each, under a 24-hour SLA |
 | Built an Australian client's pipeline from its first 50–100 trips to its pilot and fleet-wide deployment | [Australian Client Pipeline](https://kamal-mehta.com/?r=github#/p/etl-australian-client): two recorders fused into one per-second record on AWS |
@@ -24,10 +24,11 @@ Production code stays private; the public kits below are my code on invented dat
 
 #### Now
 
-- [eval-loop-kit](https://github.com/kamalkimahek14/eval-loop-kit): scores self-improvement loop rounds with a training panel and a fresh blind panel, and flags overfit and stalls; the same method raised my voice assistant's blind pass rate from 47.7% to 77.3%.
-- [twin-eval-kit](https://github.com/kamalkimahek14/twin-eval-kit): the rules and post-checks behind my site twin, with a 92-item regression set on an invented persona (32 trick questions, 20 model-reply checks); my site twin passes its own separate 100-item set.
-- [resume-ats-harness](https://github.com/kamalkimahek14/resume-ats-harness): the standard-library core of my resume test harness: ATS-style parse, skill coverage and a company-split held-out set with a separation proof, on an invented resume.
-- [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): design note for Sarathi, my private local-first AI board: 20 agents and a three-language voice assistant on one laptop GPU; first audio 1.8 s → 0.3 s.
+- [yolov3-camera-lidar-fusion](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): my MS thesis code in MATLAB. Retrains YOLOv3 by transfer learning, calibrates a stereo camera and LiDAR, clusters LiDAR points in a 3D frustum and fuses both positions in a Kalman filter on a robot; 96% of test objects classified, 59 ms detection.
+- [eval-loop-kit](https://github.com/kamalkimahek14/eval-loop-kit): scores self-improvement loop rounds on a training panel and a fresh blind panel and flags overfit and stalls; the same method raised my voice assistant's blind pass rate from 47.7% to 77.3%.
+- [twin-eval-kit](https://github.com/kamalkimahek14/twin-eval-kit): keeps a site chatbot to published answers with rules and post-checks, tested on a 92-item regression set on an invented persona; the live twin on my site uses its own 100-item set.
+- [resume-ats-harness](https://github.com/kamalkimahek14/resume-ats-harness): parses a resume like applicant tracking software and scores it on a company-split held-out set of job posts.
+- [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): design of Sarathi, my private local-first AI board: 20 agents and a three-language voice assistant on one laptop GPU; first audio 1.8 s → 0.3 s.
 
 #### Stack
 
@@ -36,6 +37,6 @@ Production code stays private; the public kits below are my code on invented dat
 - LLMs · RAG · local agents (Ollama) · Cloudflare Workers AI
 - AWS (S3, Lambda, QuickSight, OpenSearch) · Docker · Git · Linux
 
-## License
+#### License
 
-This profile text is © 2026 Kamal Mehta, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). You may share and adapt it with credit to Kamal Mehta. The full text is in [LICENSE](LICENSE).
+Profile text © 2026 Kamal Mehta, [CC BY 4.0](LICENSE).
