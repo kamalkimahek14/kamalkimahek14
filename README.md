@@ -24,11 +24,11 @@ Production code stays private. Public below: my MS thesis code in MATLAB (with i
 
 #### Public code
 
-- [yolov3-camera-lidar-fusion](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): my MS thesis code in MATLAB. Retrains YOLOv3 by transfer learning, calibrates a stereo camera and LiDAR, clusters LiDAR points in a 3D frustum and fuses both positions in a Kalman filter on an unmanned ground vehicle; 96.25% test accuracy, 59 ms detection.
+- [yolov3-camera-lidar-fusion](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): my MS thesis code in MATLAB. Retrains YOLOv3 by transfer learning, calibrates a stereo camera and LiDAR, clusters LiDAR points in a 3D frustum and fuses both positions in a Kalman filter on an unmanned ground vehicle; the thesis reports 96.25% test accuracy and 59 ms detection.
 - [eval-loop-kit](https://github.com/kamalkimahek14/eval-loop-kit): scores self-improvement loop rounds on a training panel and a fresh blind panel and flags overfit and stalls; the same method raised my voice assistant's blind pass rate from 47.7% to 77.3%.
 - [twin-eval-kit](https://github.com/kamalkimahek14/twin-eval-kit): keeps a site chatbot to published answers with rules and post-checks, tested on a 92-item regression set on an invented persona; the live twin on my site passes 100/100 on its own set.
 - [resume-ats-harness](https://github.com/kamalkimahek14/resume-ats-harness): parses a resume like applicant tracking software and scores it on a company-split held-out set of job posts.
-- [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): design of Sarathi, my private local-first AI board: 20 agents and a three-language voice assistant on one laptop GPU; first audio 1.8 s → 0.3 s.
+- [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): design of Sarathi, my private local-first AI board: 20 agents and a three-language voice assistant on one laptop GPU; first audio of a short reply 1.8 s → 0.3 s.
 
 #### Stack
 
