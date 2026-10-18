@@ -12,10 +12,10 @@ Production code stays private.
 
 - [dqn-train-energy](https://github.com/kamalkimahek14/dqn-train-energy): Double DQN eco-driving on a simulated train, in PyTorch and TensorFlow. 31.5% less fuel than a speed-holding baseline on 50 held-out tracks, on time on 99%; speed-limit overshoots (0.31 per trip) are the next fix.
 - [yolov3-camera-lidar-fusion](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): MS thesis code in MATLAB (2021 scripts, 2026 helpers): YOLOv3 transfer learning, camera and LiDAR calibration, Kalman fusion. 96.25% mAP (4 classes), 59 ms detection.
-- [eval-loop-kit](https://github.com/kamalkimahek14/eval-loop-kit): scores loop rounds on a training panel and a fresh blind panel, and flags overfit. I use the same train/blind method on my voice assistant (blind pass rate 47.7% → 77.3%).
+- [eval-loop-kit](https://github.com/kamalkimahek14/eval-loop-kit): scores loop rounds on a training panel and a fresh blind panel, and flags overfit. I use the same train/held-out method on my voice assistant (held-out pass rate 47.7% → 77.3%).
 - [twin-eval-kit](https://github.com/kamalkimahek14/twin-eval-kit): rules and post-checks that keep a site chatbot to published answers, with a 92-item regression set on an invented persona.
 - [resume-ats-harness](https://github.com/kamalkimahek14/resume-ats-harness): parses a resume the way applicant tracking software does. A fuller private version with 5 extractors took my resume's parse score from 85.6% to 100%.
-- [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): my current work, a private AI board with 20 agents and a three-language voice assistant on one laptop GPU. Time to first audio for a three-word reply: 1.8 s → 0.3 s.
+- [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): my current work, a private AI board with 20 agents and a three-language voice assistant on one laptop GPU. Text-to-speech time to first audio for a three-word reply: 1.8 s → 0.3 s.
 
 #### Work
 
