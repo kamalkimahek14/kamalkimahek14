@@ -6,17 +6,6 @@ Open to Machine Learning Engineer, Forward Deployed Engineer and Applied AI Engi
 
 [kamal-mehta.com](https://kamal-mehta.com/?r=github) · [Ask my digital twin](https://kamal-mehta.com/chat/?r=github) · [LinkedIn](https://www.linkedin.com/in/kamal-m-3ba627b4/)
 
-#### Public code
-
-Production code stays private.
-
-- [dqn-train-energy](https://github.com/kamalkimahek14/dqn-train-energy): Double DQN eco-driving on a simulated train, in PyTorch and TensorFlow. 31.5% less fuel than a speed-holding baseline on 50 held-out tracks, on time on 99%; a slack predictor as a safety filter cuts slack events per trip 93% (synthetic data); speed-limit overshoots (0.31 per trip) are the next fix.
-- [yolov3-camera-lidar-fusion](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): MS thesis code in MATLAB (2021 scripts, 2026 helpers): YOLOv3 transfer learning, camera and LiDAR calibration, Kalman fusion. 96.25% mAP@0.5 (4 classes) in the 2021 thesis, with the 2026 helpers verified by self-checks; 59 ms detection.
-- [eval-loop-kit](https://github.com/kamalkimahek14/eval-loop-kit): scores loop rounds on a training panel and a fresh blind panel, and flags overfit. I use the same train/held-out method on my voice assistant (held-out pass rate 47.7% → 77.3%).
-- [twin-eval-kit](https://github.com/kamalkimahek14/twin-eval-kit): rules and post-checks that keep a site chatbot to published answers, with a 92-item regression set on an invented persona.
-- [resume-ats-harness](https://github.com/kamalkimahek14/resume-ats-harness): parses a resume the way applicant tracking software does. A fuller private version (4 PDF extractors and a port of OpenResume's parser) took my resume's parse score from 85.6% to 100%.
-- [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): my current work, a private AI board with 20 agents and a three-language voice assistant on one laptop GPU. Text-to-speech time to first audio for a three-word reply: 1.8 s → 0.3 s.
-
 #### Work
 
 Machine Learning Engineer at Progress Rail (Caterpillar), 2022–2026: autonomous freight trains for a Class I U.S. railroad, 500+ locomotives.
@@ -31,6 +20,17 @@ Machine Learning Engineer at Progress Rail (Caterpillar), 2022–2026: autonomou
 | Cut train consist generation from about a work week to 4–5 hours | [Building Train Make-Ups (Consists) in Parallel](https://kamal-mehta.com/?r=github#/p/consist-generation-scale): about 2,500 per run with Python multiprocessing over OpenSearch |
 | Analyzed 1,000+ real trips to set the fuel targets for the software's 2025 EPA certification | [The Analysis Behind a 12% Fuel Saving, Certified by the EPA](https://kamal-mehta.com/?r=github#/p/epa-fuel-certification): field analysis, sim-to-real gap fed back |
 | Reached a test mAP@0.5 of 96.25% (4 classes) for object detection (MS thesis) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion): YOLOv3 with stereo camera and LiDAR through a Kalman filter; 59 ms detection |
+
+#### Public code
+
+Production code stays private.
+
+- [dqn-train-energy](https://github.com/kamalkimahek14/dqn-train-energy): Double DQN eco-driving on a simulated train, in PyTorch and TensorFlow. 31.5% less fuel than a speed-holding baseline on 50 held-out tracks, on time on 99%; a slack predictor as a safety filter cuts slack events per trip 93% (synthetic data); speed-limit violations (0.31 per trip) are the next fix.
+- [yolov3-camera-lidar-fusion](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): MS thesis code in MATLAB (2021 scripts, 2026 helpers): YOLOv3 transfer learning, camera and LiDAR calibration, Kalman fusion. 96.25% mAP@0.5 (4 classes) in the 2021 thesis, with the 2026 helpers verified by self-checks; 59 ms detection.
+- [eval-loop-kit](https://github.com/kamalkimahek14/eval-loop-kit): scores loop rounds on a training panel and a fresh blind panel, and flags overfit. I use the same train/held-out method on my voice assistant (held-out pass rate 47.7% → 77.3%).
+- [twin-eval-kit](https://github.com/kamalkimahek14/twin-eval-kit): rules and post-checks that keep a site chatbot to published answers, with a 92-item regression set on an invented persona.
+- [resume-ats-harness](https://github.com/kamalkimahek14/resume-ats-harness): parses a resume the way applicant tracking software does. A fuller private version (4 PDF extractors and a port of OpenResume's parser) took my resume's parse score from 85.6% to 100%.
+- [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): my current work, a private AI board with 20 agents and a three-language voice assistant on one laptop GPU. Text-to-speech time to first audio for a three-word reply: 1.8 s → 0.3 s.
 
 #### Stack
 
