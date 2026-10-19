@@ -1,8 +1,8 @@
 ### Kamal Mehta
 
-Machine Learning Engineer. I built machine learning that runs in production on 500+ locomotives, and camera–LiDAR detection and Kalman fusion on an unmanned vehicle (MS thesis).
+Machine Learning Engineer · Perception Engineer. Deep RL on 500+ locomotives, camera + LiDAR perception, local LLM agents. Open to new roles.
 
-Open to Machine Learning Engineer and Perception Engineer roles · Dallas–Fort Worth, TX · kamalmehta.ai@gmail.com
+Dallas–Fort Worth, TX · kamalmehta.ai@gmail.com
 
 [kamal-mehta.com](https://kamal-mehta.com/?r=github) · [Ask my digital twin](https://kamal-mehta.com/chat/?r=github) · [LinkedIn](https://www.linkedin.com/in/kamal-m-3ba627b4/)
 
