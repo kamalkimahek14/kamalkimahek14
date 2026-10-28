@@ -8,15 +8,15 @@ Dallas–Fort Worth, TX · kamalmehta.ai@gmail.com
 
 #### Work
 
-Machine Learning Engineer at Progress Rail (Caterpillar), 2022–2026: autonomous freight trains for a Class I U.S. railroad, 500+ locomotives.
+Shipped DQN driving models to 500+ autonomous freight locomotives of a Class I U.S. railroad as Machine Learning Engineer at Progress Rail (Caterpillar), 2022–2026.
 
 Building Sarathi: 20 local agents and a three-language voice assistant on one 6 GB laptop GPU (design note below). Built Disha, a local career advisor (below).
 
 | Result | How |
 |---|---|
-| 12% fuel saving vs manual driving, 1,000+ trips (Aug 2024 – Dec 2025); EPA-certified software (2025) | [Deep RL Driving Strategy for Freight Trains](https://kamal-mehta.com/?r=github#/p/deep-rl-driving): my DQN models plus a rule-based refinement layer; one 15–20 MB file per model, about 100× smaller than the 2 GB supervised model; under 10 ms per decision, CPU-only. |
+| 12% fuel saving vs manual driving, 1,000+ trips (Aug 2024 – Dec 2025); EPA-certified software (2025); under 10 ms per decision, CPU-only | [Deep RL Driving Strategy for Freight Trains](https://kamal-mehta.com/?r=github#/p/deep-rl-driving): my DQN models plus a rule-based refinement layer; one 15–20 MB file per model, about 100× smaller than the 2 GB supervised model |
 | Detection, MS thesis: test mAP@0.5 96.25% (4 classes; 220 test images, a random 2% frame-level split of the same recordings) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion): YOLOv3 (SqueezeNet backbone) transfer learning on 10,989 labeled images (15,000+ with augmentation); mean IoU 0.82 |
-| Camera–LiDAR fusion, MS thesis: fusion gave each object its class and a 0.42 m position error in simulation (camera alone 0.97 m; LiDAR alone 0.29 m, no class) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion) · [code](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): YOLOv3; LiDAR points clustered in each box's 3D frustum; Kalman fusion; about 1.44 s a frame live (GTX 1050), 59 ms detection offline |
+| Camera–LiDAR fusion, MS thesis: camera-only position error 0.97 m → 0.42 m fused in simulation, with each object's class (LiDAR alone 0.29 m, no class) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion) · [code](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): YOLOv3; LiDAR points clustered in each box's 3D frustum; linear Kalman filter (constant-acceleration model); 1.44 s a frame live on an Intel NUC with a GTX 1050, stereo IMX179 cameras and a RealSense L515 LiDAR; 59 ms detection offline |
 | 4–6 RL models, one per train type, cover 100+ territories (120+ approved) | [One Model per Train Type, Not per Territory](https://kamal-mehta.com/?r=github#/p/feature-engineering-generalization): look-ahead terrain features |
 | Simulator normalized RMSE 0.25 → 0.15 on held-out field trips (random 80/20 split) | [Making the Simulator Agree With the Real Train](https://kamal-mehta.com/?r=github#/p/train-physics-calibration): NRMSE (RMSE/σ, mean of fuel and running time); bounded grid search on field trips; AWS S3/Lambda auto-recalibration |
 | Fleet availability about 90% (Jan 2024) → about 99% (Jun 2026) | [100+ Field Issues Investigated](https://kamal-mehta.com/?r=github#/p/rca-fleet-availability): a regression test for each client-reported issue; I wrote an AWS Lambda reliability pipeline and a replacement fleet-health crawler |
@@ -29,7 +29,7 @@ Building Sarathi: 20 local agents and a three-language voice assistant on one 6 
 Production code stays private.
 
 - [dqn-train-energy](https://github.com/kamalkimahek14/dqn-train-energy): Double DQN eco-driving on a simulated train, in PyTorch and TensorFlow. 31.5% less fuel than a speed-holding baseline on 50 test tracks (also used in tuning), on time on 99% (2 seeds); a slack predictor as a safety filter cuts slack events per trip 93% (synthetic data).
-- [yolov3-camera-lidar-fusion](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): MS thesis code in MATLAB (2021 scripts, 2026 helpers): YOLOv3 transfer learning, camera and LiDAR calibration, Kalman fusion. Test mAP@0.5 96.25% (4 classes) in the 2021 thesis; about 1.44 s a frame live on a GTX 1050, 59 ms detection per image offline.
+- [yolov3-camera-lidar-fusion](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): my 2021 MATLAB thesis pipeline (YOLOv3 transfer learning, camera and LiDAR calibration, Kalman fusion), with 2026 helper scripts. Test mAP@0.5 96.25% (4 classes) in the 2021 thesis; about 1.44 s a frame live on a GTX 1050, 59 ms detection per image offline.
 - [eval-loop-kit](https://github.com/kamalkimahek14/eval-loop-kit): scores loop rounds on a training panel (dev judges) and a fresh blind panel (held-out judges), and flags overfit. I use the same train/held-out method on my voice assistant (held-out pass rate 55.3% → 71.2%, 3-round means).
 - [twin-eval-kit](https://github.com/kamalkimahek14/twin-eval-kit): rules and post-checks that keep a site chatbot to published answers, with a 92-item regression set on an invented persona.
 - [resume-ats-harness](https://github.com/kamalkimahek14/resume-ats-harness): parses a resume the way applicant tracking software does. A fuller private version (4 PDF extractors and a port of OpenResume's parser) took my resume's parse score from 85.6% to 100%.
@@ -47,7 +47,7 @@ I built Disha (Hindi for "direction") to score a resume, LinkedIn profile, GitHu
 #### Stack
 
 - Python · PyTorch · TensorFlow · scikit-learn · pandas · NumPy · SQL · C++ · Cython · MATLAB
-- Reinforcement learning (DQN; PPO explored as a baseline) · supervised learning · unsupervised learning (clustering) · computer vision (YOLOv3, CNNs) · sensor fusion and Kalman filtering
+- Reinforcement learning (DQN; PPO explored as a baseline) · supervised learning · unsupervised learning (clustering) · computer vision (YOLOv3, CNNs) · sensor fusion and Kalman filtering · LiDAR and stereo camera calibration · ROS · Gazebo
 - LLMs · RAG · local agents (Ollama) · Cloudflare Workers AI
 - AWS (S3, Lambda, QuickSight, OpenSearch) · Docker · AWS CodePipeline · GitHub Actions · Git · Linux
 
