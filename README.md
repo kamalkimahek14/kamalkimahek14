@@ -10,16 +10,16 @@ Dallas–Fort Worth, TX · kamalmehta.ai@gmail.com
 
 Machine Learning Engineer at Progress Rail (Caterpillar), 2022–2026: autonomous freight trains for a Class I U.S. railroad, 500+ locomotives.
 
-Current work: Sarathi, a private, local-first AI board with 20 agents and a three-language voice assistant on one 6 GB laptop GPU (design note below), and Disha, a local career advisor (below).
+Now building Sarathi, a private AI board that runs 20 local agents and a three-language voice assistant on one 6 GB laptop GPU (design note below), and Disha, a local career advisor (below).
 
 | Result | How |
 |---|---|
 | 12% fuel saving vs manual driving, 1,000+ trips (Aug 2024 – Dec 2025); EPA-certified software (2025) | [Deep RL Driving Strategy for Freight Trains](https://kamal-mehta.com/?r=github#/p/deep-rl-driving): my DQN models plus a rule-based refinement layer; one 15–20 MB file per model, about 100× smaller than the 2 GB supervised model; under 10 ms per decision, CPU-only. |
 | Camera–LiDAR fusion, MS thesis: classified objects located to 0.42 m mean error in simulation (camera alone 0.97 m; LiDAR alone 0.29 m, unclassified) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion) · [code](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): YOLOv3; LiDAR points clustered in each box's 3D frustum; Kalman fusion; about 1.44 s a frame live (GTX 1050), 59 ms detection offline |
-| Detection, MS thesis: test mAP@0.5 96.25% (4 classes; random 2% frame-level test split of the same recordings) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion): YOLOv3 (SqueezeNet backbone) transfer learning on 10,989 labeled images (15,000+ with augmentation); mean IoU 0.82 |
-| 4–6 per-train-type RL models replace per-territory models; 100+ territories run RL (120+ approved; pilot ~6–7) | [One Model per Train Type, Not per Territory](https://kamal-mehta.com/?r=github#/p/feature-engineering-generalization): look-ahead terrain features |
-| Simulator normalized RMSE 0.25 → 0.15 on held-out field trips | [Making the Simulator Agree With the Real Train](https://kamal-mehta.com/?r=github#/p/train-physics-calibration): NRMSE (RMSE/σ, mean of fuel and running time); bounded grid search on field trips; AWS S3/Lambda auto-recalibration |
-| Fleet availability about 90% (Jan 2024) → about 99% (mid-2026) | [100+ Field Issues Investigated](https://kamal-mehta.com/?r=github#/p/rca-fleet-availability): a regression test for each client-reported issue; my replacement crawler helped close the gap |
+| Detection, MS thesis: test mAP@0.5 96.25% (4 classes; 220 test images, a random 2% frame-level split of the same recordings) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion): YOLOv3 (SqueezeNet backbone) transfer learning on 10,989 labeled images (15,000+ with augmentation); mean IoU 0.82 |
+| 4–6 RL models, one per train type, replace per-territory models; RL runs on 100+ territories (120+ approved; the pilot covered about 6–7) | [One Model per Train Type, Not per Territory](https://kamal-mehta.com/?r=github#/p/feature-engineering-generalization): look-ahead terrain features |
+| Simulator normalized RMSE 0.25 → 0.15 on held-out field trips (random 80/20 split) | [Making the Simulator Agree With the Real Train](https://kamal-mehta.com/?r=github#/p/train-physics-calibration): NRMSE (RMSE/σ, mean of fuel and running time); bounded grid search on field trips; AWS S3/Lambda auto-recalibration |
+| Fleet availability about 90% (Jan 2024) → about 99% (mid-2026) | [100+ Field Issues Investigated](https://kamal-mehta.com/?r=github#/p/rca-fleet-availability): a regression test for each client-reported issue; I wrote an AWS Lambda reliability pipeline and a replacement fleet-health crawler |
 | About 8–10% fuel saving in an Australian client's pilot | [The Data Pipeline Behind an Australian Railroad Client's Rollout](https://kamal-mehta.com/?r=github#/p/etl-australian-client): my pipeline, 50–100 trips → fleet-wide; trip analysis fed model updates; ~300-car iron-ore trains, ECP brakes |
 | Train consist generation: about a work week → 4–5 hours | [Building Train Make-Ups (Consists) in Parallel](https://kamal-mehta.com/?r=github#/p/consist-generation-scale): Python multiprocessing over OpenSearch |
 | About 95–98% wall-position accuracy (within 5 cm) on floor plans from handheld scans at Artifex | [Floor Plans from Handheld Scans](https://kamal-mehta.com/?r=github#/p/floor-plan-generation): density-based clustering separates walls from open space; checked against architects' hand-drawn plans; piloted by about 30 architects |
@@ -28,7 +28,7 @@ Current work: Sarathi, a private, local-first AI board with 20 agents and a thre
 
 Production code stays private.
 
-- [dqn-train-energy](https://github.com/kamalkimahek14/dqn-train-energy): Double DQN eco-driving on a simulated train, in PyTorch and TensorFlow. 31.5% less fuel than a speed-holding baseline on 50 test tracks (the tracks were also read between tuning rounds), on time on 99%; a slack predictor as a safety filter cuts slack events per trip 93% (synthetic data); speed-limit violations (0.31 per trip) are the next fix.
+- [dqn-train-energy](https://github.com/kamalkimahek14/dqn-train-energy): Double DQN eco-driving on a simulated train, in PyTorch and TensorFlow. 31.5% less fuel than a speed-holding baseline on 50 evaluation tracks that were also used in tuning, on time on 99% (2 seeds); a slack predictor as a safety filter cuts slack events per trip 93% (synthetic data).
 - [yolov3-camera-lidar-fusion](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): MS thesis code in MATLAB (2021 scripts, 2026 helpers): YOLOv3 transfer learning, camera and LiDAR calibration, Kalman fusion. Test mAP@0.5 96.25% (4 classes) in the 2021 thesis; about 1.44 s a frame live on a GTX 1050, 59 ms detection per image offline.
 - [eval-loop-kit](https://github.com/kamalkimahek14/eval-loop-kit): scores loop rounds on a training panel (dev judges) and a fresh blind panel (held-out judges), and flags overfit. I use the same train/held-out method on my voice assistant (held-out pass rate 55.3% → 71.2%, 3-round means).
 - [twin-eval-kit](https://github.com/kamalkimahek14/twin-eval-kit): rules and post-checks that keep a site chatbot to published answers, with a 92-item regression set on an invented persona.
@@ -37,11 +37,10 @@ Production code stays private.
 
 #### Disha, a local career advisor (private repo, code on request)
 
-Disha (Hindi for "direction") scores a resume, LinkedIn profile, GitHub profile and portfolio site separately, out of 100, against live postings for one target role. Roles match strictly, by every word of the title plus the role family's other titles; skill gaps are the requirements that 15%+ of companies name.
+I built Disha (Hindi for "direction") to score a resume, LinkedIn profile, GitHub profile and portfolio site separately, out of 100, against live postings for one target role, with strict title matching and skill gaps taken from the requirements 15%+ of companies name.
 
-- Users get a recruiter's ATS view, rewrites in the user's own words shown as a diff (a number they never wrote becomes [N]), and a tailored resume and cover letter per top match in PDF, DOCX and Markdown.
-- A PDF report laid out for print comes with a week-by-week roadmap at the user's hours a week.
-- Everything runs on 127.0.0.1 with a local Ollama reviewer, and totals are computed in code. CI runs 617 tests on Python 3.11 and 3.13 and a PII scan.
+- Users get a recruiter's ATS view, rewrites in their own words shown as a diff (a number they never wrote becomes [N]), a tailored resume and cover letter per top match in PDF, DOCX and Markdown, a print-ready PDF report and a week-by-week roadmap.
+- Everything runs on 127.0.0.1 with a local Ollama reviewer; CI runs 617 tests on Python 3.11 and 3.13 and a PII scan.
 - Review rounds R19–R24 with invented job seekers and recruiters took usefulness from 5.0 to 7.0 and credibility from 6.75 to 8.0.
 
 #### Stack
