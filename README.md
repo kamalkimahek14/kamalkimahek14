@@ -10,7 +10,7 @@ Dallas–Fort Worth, TX · kamalmehta.ai@gmail.com
 
 Machine Learning Engineer at Progress Rail (Caterpillar), 2022–2026: autonomous freight trains for a Class I U.S. railroad, 500+ locomotives.
 
-Current work: Sarathi, a private, local-first AI board with 20 agents and a three-language voice assistant on one 6 GB laptop GPU (design note below).
+Current work: Sarathi, a private, local-first AI board with 20 agents and a three-language voice assistant on one 6 GB laptop GPU (design note below), and Disha, a local career advisor (below).
 
 | Result | How |
 |---|---|
@@ -23,6 +23,19 @@ Current work: Sarathi, a private, local-first AI board with 20 agents and a thre
 | About 8–10% fuel saving in an Australian client's pilot | [The Data Pipeline Behind an Australian Railroad Client's Rollout](https://kamal-mehta.com/?r=github#/p/etl-australian-client): my pipeline, 50–100 trips → fleet-wide; trip analysis fed model updates; ~300-car iron-ore trains, ECP brakes |
 | Train consist generation: about a work week → 4–5 hours | [Building Train Make-Ups (Consists) in Parallel](https://kamal-mehta.com/?r=github#/p/consist-generation-scale): Python multiprocessing over OpenSearch |
 | About 95–98% wall-position accuracy (within 5 cm) on floor plans from handheld scans at Artifex | [Floor Plans from Handheld Scans](https://kamal-mehta.com/?r=github#/p/floor-plan-generation): density-based clustering separates walls from open space; checked against architects' hand-drawn plans; piloted by about 30 architects |
+
+#### Disha: a local career advisor (private repo, code on request)
+
+Disha (Hindi for "direction") scores a job seeker's resume, LinkedIn, GitHub and portfolio site separately, out of 100, for one target role, against live postings for that role from public job-board APIs.
+
+- Strict target-role matching: every word of the role in the posting title, plus the role family's other titles. Skill gaps come from the requirements that 15%+ of companies name (one vote per company).
+- ATS view: the recruiter's candidate card, the parsed history, education and skills, keyword hits against the postings, screening questions and parse warnings.
+- Rewrites in the user's own words, with a diff. A number the user never wrote becomes [N], so it never suggests a result they did not have.
+- Tailored resume and cover letter for the top matches, as PDF, DOCX and Markdown, from the user's own content only.
+- A PDF report laid out for print, and a week-by-week roadmap at the user's hours a week: applications and referrals, interview preparation, then the top skill gaps.
+- Local-first and private: it serves on 127.0.0.1 only, the AI reviewer is a local model through Ollama by default, the weighted totals are computed in code, and a PII scan runs in CI.
+- 617 tests pass in CI on Python 3.11 and 3.13.
+- Review rounds R19–R24 by an invented panel (3 job seekers, 2 recruiters, invented profiles): seekers 5.0 → 7.0, recruiters 6.75 → 8.0, target 8.5.
 
 #### Public code
 
