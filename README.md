@@ -24,19 +24,6 @@ Current work: Sarathi, a private, local-first AI board with 20 agents and a thre
 | Train consist generation: about a work week → 4–5 hours | [Building Train Make-Ups (Consists) in Parallel](https://kamal-mehta.com/?r=github#/p/consist-generation-scale): Python multiprocessing over OpenSearch |
 | About 95–98% wall-position accuracy (within 5 cm) on floor plans from handheld scans at Artifex | [Floor Plans from Handheld Scans](https://kamal-mehta.com/?r=github#/p/floor-plan-generation): density-based clustering separates walls from open space; checked against architects' hand-drawn plans; piloted by about 30 architects |
 
-#### Disha: a local career advisor (private repo, code on request)
-
-Disha (Hindi for "direction") scores a job seeker's resume, LinkedIn, GitHub and portfolio site separately, out of 100, for one target role, against live postings for that role from public job-board APIs.
-
-- Strict target-role matching: every word of the role in the posting title, plus the role family's other titles. Skill gaps come from the requirements that 15%+ of companies name (one vote per company).
-- ATS view: the recruiter's candidate card, the parsed history, education and skills, keyword hits against the postings, screening questions and parse warnings.
-- Rewrites in the user's own words, with a diff. A number the user never wrote becomes [N], so it never suggests a result they did not have.
-- Tailored resume and cover letter for the top matches, as PDF, DOCX and Markdown, from the user's own content only.
-- A PDF report laid out for print, and a week-by-week roadmap at the user's hours a week: applications and referrals, interview preparation, then the top skill gaps.
-- Local-first and private: it serves on 127.0.0.1 only, the AI reviewer is a local model through Ollama by default, the weighted totals are computed in code, and a PII scan runs in CI.
-- 617 tests pass in CI on Python 3.11 and 3.13.
-- Review rounds R19–R24 by an invented panel (3 job seekers, 2 recruiters, invented profiles): seekers 5.0 → 7.0, recruiters 6.75 → 8.0, target 8.5.
-
 #### Public code
 
 Production code stays private.
@@ -47,6 +34,15 @@ Production code stays private.
 - [twin-eval-kit](https://github.com/kamalkimahek14/twin-eval-kit): rules and post-checks that keep a site chatbot to published answers, with a 92-item regression set on an invented persona.
 - [resume-ats-harness](https://github.com/kamalkimahek14/resume-ats-harness): parses a resume the way applicant tracking software does. A fuller private version (4 PDF extractors and a port of OpenResume's parser) took my resume's parse score from 85.6% to 100%.
 - [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): my current work, a private AI board with 20 agents and a three-language voice assistant on one laptop GPU. TTS synthesis latency (three-word reply): 1.8 s → 0.3 s after moving the voice to the GPU; time to first audio (first sentence, timed live): 0.7–1.1 s.
+
+#### Disha, a local career advisor (private repo, code on request)
+
+Disha (Hindi for "direction") scores a resume, LinkedIn profile, GitHub profile and portfolio site separately, out of 100, against live postings for one target role. Roles match strictly, by every word of the title plus the role family's other titles; skill gaps are the requirements that 15%+ of companies name.
+
+- It shows a recruiter's ATS view, rewrites in the user's own words shown as a diff (a number they never wrote becomes [N]), and a tailored resume and cover letter per top match in PDF, DOCX and Markdown.
+- It also gives a PDF report laid out for print and a week-by-week roadmap at the user's hours a week.
+- It runs on 127.0.0.1 with a local Ollama reviewer; totals are computed in code. CI runs 617 tests on Python 3.11 and 3.13 and a PII scan.
+- Review rounds R19–R24 with invented job seekers and recruiters took usefulness from 5.0 to 7.0 and credibility from 6.75 to 8.0 (target 8.5).
 
 #### Stack
 
