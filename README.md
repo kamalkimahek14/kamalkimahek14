@@ -35,7 +35,7 @@ Production code stays private.
 - [resume-ats-harness](https://github.com/kamalkimahek14/resume-ats-harness) parses a resume the way applicant tracking software does. A fuller private version (4 PDF extractors and a port of OpenResume's parser) took my resume's parse score from 85.6% to 100%.
 - [sarathi-design-note](https://github.com/kamalkimahek14/sarathi-design-note): my current work, a private AI board with 20 agents and a three-language voice assistant on one laptop GPU. TTS synthesis latency (three-word reply): 1.8 s → 0.3 s after moving the voice to the GPU; time to first audio (first sentence, timed live): 0.7–1.1 s.
 
-#### Disha, a local career advisor (private repo, code on request)
+#### Disha, a local career advisor (private repo)
 
 I built Disha (Hindi for "direction") to score a resume, LinkedIn profile, GitHub profile and portfolio site separately, out of 100, against live postings for one target role, with strict title matching and skill gaps taken from the requirements 15%+ of companies name.
 
