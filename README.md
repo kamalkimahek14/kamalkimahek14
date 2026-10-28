@@ -16,7 +16,7 @@ Current work: Sarathi, a private, local-first AI board with 20 agents and a thre
 |---|---|
 | 12% fuel saving vs manual driving, 1,000+ trips (Aug 2024 – Dec 2025); EPA-certified software (2025) | [Deep RL Driving Strategy for Freight Trains](https://kamal-mehta.com/?r=github#/p/deep-rl-driving): my DQN models plus a rule-based refinement layer; one 15–20 MB file per model, about 100× smaller than the 2 GB supervised model; under 10 ms per decision, CPU-only. |
 | Camera–LiDAR fusion, MS thesis: classified objects located to 0.42 m mean error in simulation (camera alone 0.97 m; LiDAR alone 0.29 m, unclassified) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion) · [code](https://github.com/kamalkimahek14/yolov3-camera-lidar-fusion): YOLOv3; LiDAR points clustered in each box's 3D frustum; Kalman fusion; about 1.44 s a frame live (GTX 1050), 59 ms detection offline |
-| Detection, MS thesis: test mAP@0.5 96.25% (4 classes; random 2% frame-level test split of the same recordings) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion): YOLOv3 (SqueezeNet backbone) transfer learning on 10,989 labeled images; mean IoU 0.82 |
+| Detection, MS thesis: test mAP@0.5 96.25% (4 classes; random 2% frame-level test split of the same recordings) | [MS Thesis](https://kamal-mehta.com/?r=github#/p/perception-fusion): YOLOv3 (SqueezeNet backbone) transfer learning on 10,989 labeled images (15,000+ with augmentation); mean IoU 0.82 |
 | 4–6 per-train-type RL models replace per-territory models; 100+ territories run RL (120+ approved; pilot ~6–7) | [One Model per Train Type, Not per Territory](https://kamal-mehta.com/?r=github#/p/feature-engineering-generalization): look-ahead terrain features |
 | Simulator normalized RMSE 0.25 → 0.15 on held-out field trips | [Making the Simulator Agree With the Real Train](https://kamal-mehta.com/?r=github#/p/train-physics-calibration): NRMSE (RMSE/σ, mean of fuel and running time); bounded grid search on field trips; AWS S3/Lambda auto-recalibration |
 | Fleet availability about 90% (Jan 2024) → about 99% (mid-2026) | [100+ Field Issues Investigated](https://kamal-mehta.com/?r=github#/p/rca-fleet-availability): a regression test for each client-reported issue; my replacement crawler helped close the gap |
@@ -39,9 +39,9 @@ Production code stays private.
 
 Disha (Hindi for "direction") scores a resume, LinkedIn profile, GitHub profile and portfolio site separately, out of 100, against live postings for one target role. Roles match strictly, by every word of the title plus the role family's other titles; skill gaps are the requirements that 15%+ of companies name.
 
-- It shows a recruiter's ATS view, rewrites in the user's own words shown as a diff (a number they never wrote becomes [N]), and a tailored resume and cover letter per top match in PDF, DOCX and Markdown.
-- It also gives a PDF report laid out for print and a week-by-week roadmap at the user's hours a week.
-- It runs on 127.0.0.1 with a local Ollama reviewer; totals are computed in code. CI runs 617 tests on Python 3.11 and 3.13 and a PII scan.
+- Users get a recruiter's ATS view, rewrites in the user's own words shown as a diff (a number they never wrote becomes [N]), and a tailored resume and cover letter per top match in PDF, DOCX and Markdown.
+- A PDF report laid out for print comes with a week-by-week roadmap at the user's hours a week.
+- Everything runs on 127.0.0.1 with a local Ollama reviewer, and totals are computed in code. CI runs 617 tests on Python 3.11 and 3.13 and a PII scan.
 - Review rounds R19–R24 with invented job seekers and recruiters took usefulness from 5.0 to 7.0 and credibility from 6.75 to 8.0.
 
 #### Stack
